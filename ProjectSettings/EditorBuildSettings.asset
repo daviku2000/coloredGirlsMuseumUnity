@@ -7,9 +7,14 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 0
     path: 
-    guid: 00000000000000000000000000000000
+    guid: d1c3109bdb54ad54c8a2b2838528e640
+  - enabled: 1
+    path: Assets/Scenes/Room.unity
+    guid: 8267993e8834b8549a4c1647166c49b2
   m_configObjects:
-    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 2b11e348133477346a67385c625e6fc0, type: 2}
-    Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: c2c0febeaf99ad6459b5ec4016dd5945, type: 2}
-    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 25e98dbf17b5cc9439f2e7eae945dd6c, type: 2}
-    xr.sdk.mock-hmd.settings: {fileID: 11400000, guid: fef8a4d4c166537448918c27f3132779, type: 2}
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 57ec795a747899444bfd8b45c39a845b,
+      type: 2}
+    Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: 3bc16883b69c39f44a3733c4c4d29738,
+      type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 9acd7ba2159035448aed94b52d11a2e7,
+      type: 2}

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Move : MonoBehaviour
 {
     public float speed = 1f;
+    public Transform thisObj;
 
     // Update is called once per frame
     void Update()
@@ -12,8 +13,8 @@ public class Move : MonoBehaviour
         float ver = Input.GetAxis("Horizontal");
         float hor = Input.GetAxis("Vertical");
 
-        Vector3 newForward = Vector3.Normalize(new Vector3(transform.forward.x, 0f, transform.forward.z));
-        Vector3 newRight = Vector3.Normalize(new Vector3(transform.right.x, 0f, transform.right.z));
+        Vector3 newForward = Vector3.Normalize(new Vector3(thisObj.transform.forward.x, 0f, thisObj.transform.forward.z));
+        Vector3 newRight = Vector3.Normalize(new Vector3(thisObj.transform.right.x, 0f, thisObj.transform.right.z));
 
         if (hor > 0) transform.position += newForward * speed*Time.deltaTime;
         else if(hor<0) transform.position -= newForward * speed * Time.deltaTime;

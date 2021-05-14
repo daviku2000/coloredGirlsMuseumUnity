@@ -30,7 +30,6 @@ namespace WebXR
         }
     }
 
-
     public class WebXRController : MonoBehaviour
     {
         [Tooltip("Controller hand to use.")] public WebXRControllerHand hand = WebXRControllerHand.NONE;
@@ -73,7 +72,7 @@ namespace WebXR
                 WebXRControllerInput input = inputMap.inputs[i];
                 if (action == input.actionName)
                 {
-                    if (checkPresence.isXRPresent() && !input.unityInputIsButton)
+                    if (XRDevice.isPresent && !input.unityInputIsButton)
                     {
                         return Input.GetAxis(input.unityInputName);
                     }
@@ -92,7 +91,7 @@ namespace WebXR
 
         public bool GetButton(string action)
         {
-            if (checkPresence.isXRPresent())
+            if (XRDevice.isPresent)
             {
                 foreach (WebXRControllerInput input in inputMap.inputs)
                 {
@@ -130,7 +129,7 @@ namespace WebXR
         public bool GetButtonDown(string action)
         {
             // Use Unity Input Manager when XR is enabled and WebXR is not being used (eg: standalone or from within editor).
-            if (checkPresence.isXRPresent())
+            if (XRDevice.isPresent)
             {
                 foreach (WebXRControllerInput input in inputMap.inputs)
                 {
@@ -151,7 +150,7 @@ namespace WebXR
         public bool GetButtonUp(string action)
         {
             // Use Unity Input Manager when XR is enabled and WebXR is not being used (eg: standalone or from within editor).
-            if (checkPresence.isXRPresent())
+            if (XRDevice.isPresent)
             {
                 foreach (WebXRControllerInput input in inputMap.inputs)
                 {
@@ -272,7 +271,7 @@ namespace WebXR
         void Update()
         {
             // Use Unity XR Input when enabled. When using WebXR, updates are performed onControllerUpdate.
-            if (!checkPresence.isXRPresent()) return;
+            if (!XRDevice.isPresent) return;
             
             SetVisible(true);
 
@@ -332,24 +331,5 @@ namespace WebXR
             WebXRManager.Instance.OnHeadsetUpdate -= onHeadsetUpdate;
             SetVisible(false);
         }
-    }
-
-    
-}
-
-public class checkPresence
-{
-    public static bool isXRPresent()
-    {
-        var xrDisplaySubsystems = new List<XRDisplaySubsystem>();
-        SubsystemManager.GetInstances<XRDisplaySubsystem>(xrDisplaySubsystems);
-        foreach (var xrDisplay in xrDisplaySubsystems)
-        {
-            if (xrDisplay.running)
-            {
-                return true;
-            }
-        }
-        return false;
     }
 }
