@@ -8,6 +8,8 @@ public class DesertFreeFlightController : MonoBehaviour {
     [Tooltip("Enable/disable translation control. For use in Unity editor only.")]
     public bool translationEnabled = true;
 
+    public Transform body;
+
     private WebXRDisplayCapabilities capabilities;
 
     [Tooltip("Mouse sensitivity")]
@@ -55,10 +57,20 @@ public class DesertFreeFlightController : MonoBehaviour {
     void Update() {
         if (translationEnabled)
         {
-            float x = Input.GetAxis("Horizontal") * Time.deltaTime * straffeSpeed;
-            float z = Input.GetAxis("Vertical") * Time.deltaTime * straffeSpeed;
+            float x =  Input.GetAxis("Horizontal") ;
+            float z =  Input.GetAxis("Vertical") ;
 
-            transform.Translate(x, 0, z);
+
+            if (z > 0)
+            body.transform.position += Vector3.Normalize(new Vector3(transform.forward.x * Time.deltaTime, 0f, transform.forward.z *Time.deltaTime)) * straffeSpeed;
+            else if (z < 0)
+                body.transform.position -= Vector3.Normalize(new Vector3(transform.forward.x * Time.deltaTime, 0f, transform.forward.z * Time.deltaTime)) * straffeSpeed;
+
+            if (x > 0)
+                body.transform.position += Vector3.Normalize(new Vector3(transform.right.x * Time.deltaTime, 0f, transform.right.z * Time.deltaTime)) * straffeSpeed;
+            else if (x < 0)
+                body.transform.position -= Vector3.Normalize(new Vector3(transform.right.x * Time.deltaTime, 0f, transform.right.z * Time.deltaTime )) * straffeSpeed;
+
         }
 
         if (rotationEnabled && Input.GetMouseButton(0))
@@ -75,6 +87,7 @@ public class DesertFreeFlightController : MonoBehaviour {
 
             transform.localRotation = originalRotation * xQuaternion * yQuaternion;
         }
+        
     }
 
     void DisableEverything()

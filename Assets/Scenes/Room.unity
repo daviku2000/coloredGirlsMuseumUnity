@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -124,6 +124,12 @@ NavMeshSettings:
 --- !u!1 &103407197 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1325129670532142, guid: c61e4de741d37461e85f25866d1ebd31,
+    type: 3}
+  m_PrefabInstance: {fileID: 1394523017}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &103407198 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4172172842306312, guid: c61e4de741d37461e85f25866d1ebd31,
     type: 3}
   m_PrefabInstance: {fileID: 1394523017}
   m_PrefabAsset: {fileID: 0}
@@ -270,6 +276,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   thisObj: {fileID: 489866693}
+  mainCam: {fileID: 489866693}
+  leftEye: {fileID: 1197380708}
+  rightEye: {fileID: 103407198}
 --- !u!136 &280618870
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -505,7 +514,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b2004f7075934454788ead6fd5199396, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -720,6 +729,12 @@ Transform:
 --- !u!1 &1197380707 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1207760918314088, guid: c61e4de741d37461e85f25866d1ebd31,
+    type: 3}
+  m_PrefabInstance: {fileID: 1394523017}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1197380708 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4357122362856218, guid: c61e4de741d37461e85f25866d1ebd31,
     type: 3}
   m_PrefabInstance: {fileID: 1394523017}
   m_PrefabAsset: {fileID: 0}

@@ -15,7 +15,40 @@ MonoBehaviour:
   m_RequiresSettingsUpdate: 0
   m_AutomaticLoading: 0
   m_AutomaticRunning: 0
+  m_Loaders:
+  - {fileID: 11400000, guid: 51bd8cbd8571f754aad4219f99274540, type: 2}
+  - {fileID: 11400000, guid: 7cbe9afbcc5d21a4e9f4e3834626edbf, type: 2}
+  - {fileID: 11400000, guid: f31c4c300cf520e48884d759507532f2, type: 2}
+--- !u!114 &-4100196184892754122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4c3631f5e58749a59194e0cf6baf6d5, type: 3}
+  m_Name: WSA Providers
+  m_EditorClassIdentifier: 
+  m_RequiresSettingsUpdate: 0
+  m_AutomaticLoading: 0
+  m_AutomaticRunning: 0
   m_Loaders: []
+--- !u!114 &-3453891983850584504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d236b7d11115f2143951f1e14045df39, type: 3}
+  m_Name: WSA Settings
+  m_EditorClassIdentifier: 
+  m_LoaderManagerInstance: {fileID: -4100196184892754122}
+  m_InitManagerOnStart: 1
 --- !u!114 &-503471717259648655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44,10 +77,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2dc886499c26824283350fa532d087d, type: 3}
   m_Name: XRGeneralSettings
   m_EditorClassIdentifier: 
-  Keys: 010000000d000000
+  Keys: 010000000d0000000e000000
   Values:
   - {fileID: 2011217781870617667}
   - {fileID: 6039059483323754743}
+  - {fileID: -3453891983850584504}
 --- !u!114 &2011217781870617667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61,7 +95,7 @@ MonoBehaviour:
   m_Name: Standalone Settings
   m_EditorClassIdentifier: 
   m_LoaderManagerInstance: {fileID: -7798997712964822233}
-  m_InitManagerOnStart: 0
+  m_InitManagerOnStart: 1
 --- !u!114 &6039059483323754743
 MonoBehaviour:
   m_ObjectHideFlags: 0
